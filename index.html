@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      First Solutions Limited – Integrated Security & Facility Management
+    </title>
+    <link rel="icon" type="image/jpeg" href="image/logo/favicon.png" />
+    <link rel="shortcut icon" type="image/jpeg" href="image/logo/favicon.png" />
+    <link rel="apple-touch-icon" href="image/logo/favicon.png" />
+    <meta name="theme-color" content="#1B2A6B" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@600;700&family=Inter:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ── HERO SLIDER — shorter so info strip peeks below ── */
+      .hero-clean {
+        position: relative;
+        width: 100%;
+        height: 82vh;
+        min-height: 480px;
+        max-height: 780px;
+        overflow: hidden;
+        background: #080b14;
+      }
+      .hero-clean .slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+        transition: opacity 1.4s ease;
+      }
+      .hero-clean .slide.active {
+        opacity: 1;
+      }
+      .hero-clean::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 140px;
+        background: linear-gradient(to top, rgba(8, 11, 20, 0.7), transparent);
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      /* Prev/Next arrows */
+      .slide-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(27, 42, 107, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.4rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        backdrop-filter: blur(6px);
+      }
+      .slide-arrow:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+      }
+      .slide-arrow.prev {
+        left: 24px;
+      }
+      .slide-arrow.next {
+        right: 24px;
+      }
+
+      /* Dots */
+      .slide-dots {
+        position: absolute;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      }
+      .sdot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .sdot.active {
+        background: var(--gold);
+        border-color: var(--gold);
+        width: 26px;
+        border-radius: 5px;
+      }
+
+      /* ── WHO WE ARE strip ── */
+      .hero-info-strip {
+        background: #fff;
+        padding: 52px 0 44px;
+        border-bottom: 3px solid var(--gold);
+      }
+      .hero-info-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 56px;
+        align-items: center;
+      }
+      .hero-info-text h2 {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        color: #0f1220;
+        margin-bottom: 0.85rem;
+      }
+      .hero-info-text p {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.8;
+        max-width: 540px;
+      }
+      .hero-info-text p a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+      .hero-stats-circles {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+      .stat-circle {
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        background: var(--gold);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-shrink: 0;
+      }
+      .stat-circle .num {
+        font-family: var(--font-display);
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+      }
+      .stat-circle .lbl {
+        font-size: 0.6rem;
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 0.03em;
+        margin-top: 6px;
+        padding: 0 10px;
+        line-height: 1.4;
+      }
+      .hero-info-btns {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.75rem;
+        flex-wrap: wrap;
+      }
+
+      /* ── PARTNERS CAROUSEL — slow ── */
+      @keyframes partnersScrollSlow {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .partners-carousel-track {
+        animation: partnersScrollSlow 55s linear infinite !important;
+      }
+
+      /* ════════════════════════════════
+   MOBILE RESPONSIVE
+   ════════════════════════════════ */
+
+      /* Tablet 768–1024px */
+      @media (max-width: 1024px) {
+        .hero-clean {
+          height: 72vh;
+        }
+        .hero-info-inner {
+          gap: 36px;
+        }
+        .stat-circle {
+          width: 108px;
+          height: 108px;
+        }
+        .stat-circle .num {
+          font-size: 1.45rem;
+        }
+      }
+
+      /* Mobile landscape / small tablet 600–768px */
+      @media (max-width: 768px) {
+        .hero-clean {
+          height: 58vw;
+          min-height: 260px;
+          max-height: 420px;
+        }
+        .slide-arrow {
+          width: 38px;
+          height: 38px;
+          font-size: 1.1rem;
+        }
+        .slide-arrow.prev {
+          left: 10px;
+        }
+        .slide-arrow.next {
+          right: 10px;
+        }
+
+        .hero-info-strip {
+          padding: 36px 0 32px;
+        }
+        .hero-info-inner {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .hero-info-text h2 {
+          font-size: 1.3rem;
+        }
+        .hero-info-text p {
+          font-size: 0.88rem;
+        }
+        .hero-stats-circles {
+          justify-content: center;
+          gap: 16px;
+        }
+        .stat-circle {
+          width: 100px;
+          height: 100px;
+        }
+        .stat-circle .num {
+          font-size: 1.3rem;
+        }
+        .stat-circle .lbl {
+          font-size: 0.55rem;
+        }
+        .hero-info-btns {
+          justify-content: center;
+        }
+
+        /* Navbar mobile tweaks */
+        .logo-name {
+          font-size: 0.88rem;
+        }
+        .logo-tagline {
+          font-size: 0.6rem;
+        }
+        .logo-img {
+          height: 40px;
+          width: 40px;
+        }
+      }
+
+      /* Mobile portrait 480px */
+      @media (max-width: 480px) {
+        .hero-clean {
+          height: 56vw;
+          min-height: 220px;
+        }
+        .slide-arrow {
+          display: none;
+        }
+        .hero-info-text h2 {
+          font-size: 1.15rem;
+        }
+        .stat-circle {
+          width: 88px;
+          height: 88px;
+        }
+        .stat-circle .num {
+          font-size: 1.15rem;
+        }
+        .stat-circle .lbl {
+          font-size: 0.52rem;
+          padding: 0 6px;
+        }
+        .hero-stats-circles {
+          gap: 12px;
+        }
+
+        /* Services grid → 1 col */
+        .services-grid {
+          grid-template-columns: 1fr !important;
+        }
+        /* Intro features → 1 col */
+        .intro-features {
+          grid-template-columns: 1fr !important;
+        }
+        /* Partner cards → 1 col */
+        .partners-full-grid {
+          grid-template-columns: 1fr !important;
+        }
+        /* Values → 1 col */
+        .values-grid {
+          grid-template-columns: 1fr 1fr !important;
+        }
+
+        /* Section titles smaller */
+        .section-title {
+          font-size: 1.5rem !important;
+        }
+        .page-hero h1 {
+          font-size: 1.6rem !important;
+        }
+
+        /* CTA band stack */
+        .cta-band .container {
+          flex-direction: column;
+          text-align: center;
+          gap: 1.5rem;
+        }
+        .cta-actions {
+          justify-content: center;
+        }
+
+        /* Footer → single column */
+        .footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+
+        /* Partners carousel cards smaller */
+        .partner-logo-slide {
+          padding: 0.7rem 1.2rem;
+          font-size: 0.78rem;
+          min-width: 130px;
+        }
+
+        /* Buttons full width on very small */
+        .hero-info-btns .btn-primary,
+        .hero-info-btns a {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      /* Very small 360px */
+      @media (max-width: 380px) {
+        .hero-clean {
+          height: 52vw;
+        }
+        .logo-name {
+          font-size: 0.78rem;
+        }
+        .logo-tagline {
+          display: none;
+        }
+        .hero-stats-circles {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+    <style>
+      /* top offset for topbar + navbar */
+      body {
+        padding-top: 0 !important;
+      }
+      #topInfoBar + .navbar,
+      #topInfoBar ~ nav.navbar {
+        position: sticky;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PAGE LOADER -->
+    <div id="fsl-loader">
+      <div class="loader-logo">FSL</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <div class="loader-text">First Solutions Limited</div>
+    </div>
+
+    <!-- TOP INFO BAR -->
+    <div id="topInfoBar">
+      <div class="topbar-inner">
+        <div class="topbar-left">
+          <a href="#" class="topbar-item">
+            <span class="ticon">💬</span>
+            <span class="live-dot"></span>24/7 Live Support
+          </a>
+          <div class="topbar-divider"></div>
+          <a href="tel:+8801712849777" class="topbar-item">
+            <span class="ticon">📞</span>
+            +880 1712849777
+          </a>
+          <div class="topbar-divider"></div>
+          <a href="mailto:info@firstsolutions.com.bd" class="topbar-item">
+            <span class="ticon">💬</span>
+            Live Chat
+          </a>
+        </div>
+        <div class="topbar-right">
+          <span
+            style="
+              font-size: 0.7rem;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              opacity: 0.7;
+            "
+            >Follow Us</span
+          >
+          <div class="topbar-social">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Twitter">𝕏</a>
+            <a href="#" title="LinkedIn">in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="image/logo/favicon.png" alt="FSL" class="logo-img" />
+          <div class="logo-text-block">
+            <span class="logo-name">First Solutions Limited</span>
+            <span class="logo-tagline">Excellence in Security Services</span>
+          </div>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="partners.html">Our Partners</a></li>
+          <li><a href="management.html">Management</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO — CLEAN FULLSCREEN SLIDER -->
+    <section class="hero-clean" id="heroSection">
+      <div
+        class="slide active"
+        style="background-image: url(&quot;image/bodyimg/fsl\ 6.jpg&quot;)"
+      ></div>
+      <div
+        class="slide"
+        style="background-image: url(&quot;image/bodyimg/fsl\ 7.jpg&quot;)"
+      ></div>
+      <div
+        class="slide"
+        style="background-image: url(&quot;image/bodyimg/fsl\ 3.jpg&quot;)"
+      ></div>
+      <div
+        class="slide"
+        style="background-image: url(&quot;image/bodyimg/fsl\ 5.jpg&quot;)"
+      ></div>
+
+      <button class="slide-arrow prev" id="slidePrev">&#8249;</button>
+      <button class="slide-arrow next" id="slideNext">&#8250;</button>
+
+      <div class="slide-dots" id="slideDots">
+        <span class="sdot active"></span>
+        <span class="sdot"></span>
+        <span class="sdot"></span>
+        <span class="sdot"></span>
+      </div>
+    </section>
+
+    <!-- WHO WE ARE + STATS (below the slider, like G4S) -->
+    <section class="hero-info-strip">
+      <div class="hero-info-inner">
+        <div class="hero-info-text">
+          <h2>Who We Are</h2>
+          <p>
+            First Solutions Limited (FSL) is Bangladesh's premier professionally
+            managed security company — providing
+            <a href="services.html">Integrated Security Services</a>, Facility
+            Management, Electronic Security Systems, and Corporate Supply
+            Solutions to banks, multinationals, and government organizations.
+            Our entire management team are former professionals from
+            <strong>G4S Bangladesh</strong>, bringing world-class standards to
+            every engagement.
+          </p>
+          <div class="hero-info-btns">
+            <a href="services.html" class="btn-primary">Explore Services</a>
+            <a
+              href="contact.html"
+              style="
+                display: inline-block;
+                background: transparent;
+                color: var(--navy);
+                font-weight: 600;
+                font-size: 0.85rem;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                padding: 0.8rem 2rem;
+                border-radius: 4px;
+                text-decoration: none;
+                border: 2px solid var(--navy);
+                transition: 0.3s;
+              "
+              onmouseover="
+                this.style.background = 'var(--navy)';
+                this.style.color = '#fff';
+              "
+              onmouseout="
+                this.style.background = 'transparent';
+                this.style.color = 'var(--navy)';
+              "
+              >Get a Quote</a
+            >
+          </div>
+        </div>
+        <div class="hero-stats-circles">
+          <div class="stat-circle">
+            <span class="num">45+</span>
+            <span class="lbl">Clients Served</span>
+          </div>
+          <div class="stat-circle" style="background: var(--navy)">
+            <span class="num">5+</span>
+            <span class="lbl">Years Experience</span>
+          </div>
+          <div class="stat-circle">
+            <span class="num">24/7</span>
+            <span class="lbl">Operations &amp; Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE TICKER -->
+    <div class="ticker-wrap">
+      <div class="ticker-track">
+        <span>Physical Security</span><span class="sep">◆</span>
+        <span>Facility Management</span><span class="sep">◆</span>
+        <span>Electronic Security Systems</span><span class="sep">◆</span>
+        <span>Executive Protection</span><span class="sep">◆</span>
+        <span>Corporate Supply</span><span class="sep">◆</span>
+        <span>Bank &amp; ATM Security</span><span class="sep">◆</span>
+        <span>Risk Assessment</span><span class="sep">◆</span>
+        <span>Physical Security</span><span class="sep">◆</span>
+        <span>Facility Management</span><span class="sep">◆</span>
+        <span>Electronic Security Systems</span><span class="sep">◆</span>
+        <span>Executive Protection</span><span class="sep">◆</span>
+        <span>Corporate Supply</span><span class="sep">◆</span>
+      </div>
+    </div>
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="intro-text">
+            <p class="section-eyebrow">Our Expertise</p>
+            <h2 class="section-title">
+              Bangladesh's Premier
+              <span class="gold">Integrated Security</span> Provider
+            </h2>
+            <p>
+              FSL is recognized for its professional standards, operational
+              discipline, reliability, and commitment to client satisfaction. We
+              combine experienced G4S-trained leadership, disciplined manpower,
+              and modern security solutions to deliver dependable services
+              tailored to institutional and corporate requirements.
+            </p>
+            <p>
+              The company is led by Mr. Selim Chowdhury, former Managing
+              Director of G4S Bangladesh.
+            </p>
+            <a
+              href="about.html"
+              class="btn-primary"
+              style="margin-top: 1.5rem; display: inline-block"
+              >Learn More About Us</a
+            >
+          </div>
+          <div class="intro-features">
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <h3>Disciplined Operations</h3>
+              <p>
+                International standards of security operations brought directly
+                from G4S Bangladesh experience.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🏆</div>
+              <h3>Proven Leadership</h3>
+              <p>
+                Led by Mr. Selim Chowdhury, former Managing Director of G4S
+                Bangladesh.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔒</div>
+              <h3>Full Compliance</h3>
+              <p>
+                Strong focus on corporate governance and regulatory compliance
+                across all service lines.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📋</div>
+              <h3>Tailored Solutions</h3>
+              <p>
+                Cost-effective services customized to institutional and
+                corporate requirements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES PREVIEW Need change their image -->
+    <section class="services-preview">
+      <div class="container">
+        <p class="section-eyebrow center">What We Offer</p>
+        <h2 class="section-title center">
+          Our <span class="gold">Core Services</span>
+        </h2>
+        <p class="section-sub center">
+          Comprehensive solutions tailored to your unique security and
+          operational requirements
+        </p>
+        <div class="services-grid">
+          <a href="services.html#physical" class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/bodyimg/fsl\ 2.jpg&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Physical Security Services</h3>
+              <p>
+                Static guarding, access control, patrol duties, emergency
+                response, and ATM security.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a href="services.html#facility" class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/Facility\ Management.png&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Facility Management</h3>
+              <p>
+                Housekeeping, janitorial services, office support, pantry &amp;
+                building maintenance.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a href="services.html#electronic" class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/Electronic\ Security.png&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Electronic Security</h3>
+              <p>
+                CCTV, metal detectors, access control systems, alarm monitoring
+                and visitor management.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a href="services.html#executive" class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/Executive\ Protection\ 1.png&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Executive Protection</h3>
+              <p>
+                VIP protection, secure travel, route planning, threat assessment
+                and event security.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a href="services.html#supply" class="service-card">
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/Facility\ Management.png&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Corporate Supply</h3>
+              <p>
+                Office stationery, IT equipment, printing, branding materials
+                and procurement services.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a href="contact.html" class="service-card service-card-cta">
+            <div class="service-cta-inner">
+              <span class="service-cta-icon">→</span>
+              <h3>Need a Custom Solution?</h3>
+              <p>
+                Contact our team to discuss your specific security requirements.
+              </p>
+              <span class="learn-more">Get in Touch</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS CAROUSEL -->
+    <section class="partners-strip">
+      <div class="container">
+        <p class="section-eyebrow center">Trusted By</p>
+        <h2 class="section-title center" style="margin-bottom: 2.5rem">
+          Our <span class="gold">Key Partners</span>
+        </h2>
+      </div>
+      <div class="partners-carousel-wrap">
+        <div class="partners-carousel-track">
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 2.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 3.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 4.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 5.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 6.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 7.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 8.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 9.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 10.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 11.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 12.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 13.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 14.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 15.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 16.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 17.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 18.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 19.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 21.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 22.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 23.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 24.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 25.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 26.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 27.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 28.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 29.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 30.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 31.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 32.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 33.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 34.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 35.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 36.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 37.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 38.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 39.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 41.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 42.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 43.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 44.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 45.jpg" />
+          </div>
+          <div class="partner-logo-slide">
+            <img src="image/logo/fsl l 46.jpg" />
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="center" style="margin-top: 2rem">
+          <a
+            href="partners.html"
+            class="btn-outline"
+            style="color: var(--gold); border-color: var(--gold)"
+            >View All Partners</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Secure Your Business?</h2>
+          <p>
+            Contact us today for professional security services tailored to your
+            needs.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:+8801712849777" class="btn-primary">Call Now</a>
+          <a href="contact.html" class="btn-outline-light">Send a Message</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img
+                src="image/logo/favicon.png"
+                alt="FSL"
+                class="footer-logo-img"
+              />
+              <div class="logo-text-block">
+                <span
+                  class="logo-name"
+                  style="color: #ffffff; font-size: 0.95rem"
+                  >First Solutions Limited</span
+                ><span class="logo-tagline" style="color: var(--silver)"
+                  >Excellence in Security Services</span
+                >
+              </div>
+            </div>
+            <p>
+              Providing integrated security and facility management solutions
+              across Bangladesh with international standards and experienced
+              leadership.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Our Services</a></li>
+              <li><a href="partners.html">Our Partners</a></li>
+              <li><a href="management.html">Management</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#physical">Physical Security</a></li>
+              <li><a href="services.html#facility">Facility Management</a></li>
+              <li>
+                <a href="services.html#electronic">Electronic Security</a>
+              </li>
+              <li>
+                <a href="services.html#executive">Executive Protection</a>
+              </li>
+              <li><a href="services.html#supply">Corporate Supply</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact-col">
+            <h4>Contact</h4>
+            <p>📞 +88 02 226617159</p>
+            <p>📞 +8801712849777</p>
+            <p>📞 +8801316400515</p>
+            <p>✉️ info@firstsolutions.com.bd</p>
+            <p>📍 House no-01, Road no-11, Block-J, Baridhara, Dhaka-1212</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 First Solutions Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+
+      <!-- THEME SWITCHER -->
+      <div class="theme-switcher-section">
+        <div class="theme-switcher-inner">
+          <span class="theme-switcher-label">🎨 Theme</span>
+          <div class="theme-btns">
+            <button class="theme-btn" data-theme-target="light">
+              <span class="swatch"></span> Light
+            </button>
+            <button class="theme-btn" data-theme-target="dark">
+              <span class="swatch"></span> Dark
+            </button>
+            <button class="theme-btn" data-theme-target="navy">
+              <span class="swatch"></span> Navy
+            </button>
+            <button class="theme-btn" data-theme-target="red">
+              <span class="swatch"></span> Red
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+      // ── Hero Slider ──
+      const slides = document.querySelectorAll(".hero-clean .slide");
+      const dots = document.querySelectorAll(".sdot");
+      let cur = 0;
+
+      function goTo(n) {
+        slides[cur].classList.remove("active");
+        dots[cur].classList.remove("active");
+        cur = (n + slides.length) % slides.length;
+        slides[cur].classList.add("active");
+        dots[cur].classList.add("active");
+      }
+      document
+        .getElementById("slidePrev")
+        .addEventListener("click", () => goTo(cur - 1));
+      document
+        .getElementById("slideNext")
+        .addEventListener("click", () => goTo(cur + 1));
+      dots.forEach((d, i) => d.addEventListener("click", () => goTo(i)));
+      let autoSlide = setInterval(() => goTo(cur + 1), 5500);
+      document
+        .getElementById("heroSection")
+        .addEventListener("mouseenter", () => clearInterval(autoSlide));
+      document
+        .getElementById("heroSection")
+        .addEventListener("mouseleave", () => {
+          autoSlide = setInterval(() => goTo(cur + 1), 5500);
+        });
+    </script>
+  </body>
+</html>

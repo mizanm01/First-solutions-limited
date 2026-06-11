@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services – First Solutions Limited</title>
+    <link
+      rel="icon"
+      type="image/jpeg"
+      href="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/jpeg"
+      href="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+    />
+    <meta name="theme-color" content="#1B2A6B" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@600;700&family=Inter:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* top offset for topbar + navbar */
+      body {
+        padding-top: 0 !important;
+      }
+      #topInfoBar + .navbar,
+      #topInfoBar ~ nav.navbar {
+        position: sticky;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PAGE LOADER -->
+    <div id="fsl-loader">
+      <div class="loader-logo">FSL</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <div class="loader-text">First Solutions Limited</div>
+    </div>
+
+    <!-- TOP INFO BAR -->
+    <div id="topInfoBar">
+      <div class="topbar-inner">
+        <div class="topbar-left">
+          <a href="#" class="topbar-item">
+            <span class="ticon">&#x1F4AC;</span>
+            <span class="live-dot"></span>24/7 Live Support
+          </a>
+          <div class="topbar-divider"></div>
+          <a href="tel:+8801712849777" class="topbar-item">
+            <span class="ticon">&#x1F4DE;</span>
+            +880 1712849777
+          </a>
+          <div class="topbar-divider"></div>
+          <a href="mailto:info@firstsolutions.com.bd" class="topbar-item">
+            <span class="ticon">&#x1F4AC;</span>
+            Live Chat
+          </a>
+        </div>
+        <div class="topbar-right">
+          <span
+            style="
+              font-size: 0.7rem;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              opacity: 0.7;
+            "
+            >Follow Us</span
+          >
+          <div class="topbar-social">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Twitter">X</a>
+            <a href="#" title="LinkedIn">in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar scrolled" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img
+            src="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+            alt="FSL"
+            class="logo-img"
+          />
+          <div class="logo-text-block">
+            <span class="logo-name">First Solutions Limited</span>
+            <span class="logo-tagline">Excellence in Security Services</span>
+          </div>
+        </a>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="partners.html">Our Partners</a></li>
+          <li><a href="management.html">Management</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-eyebrow center">What We Offer</p>
+        <h1>Our <span class="gold">Services</span></h1>
+        <p>
+          Comprehensive security solutions tailored to your unique requirements
+        </p>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Services</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Cards Grid (like image 2 style) -->
+    <section style="padding: 80px 0; background: var(--black)">
+      <div class="container">
+        <div class="services-grid">
+          <a
+            href="#physical"
+            class="service-card"
+            onclick="openService('physical')"
+          >
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/bodyimg/fsl\ 2.jpg&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Physical Security</h3>
+              <p>
+                Guarding, access control, patrol duties, emergency response, and
+                bank security.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a
+            href="#facility"
+            class="service-card"
+            onclick="openService('facility')"
+          >
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/Facility\ Management.png&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Facility Management</h3>
+              <p>
+                Housekeeping, janitorial, office support, pantry and building
+                maintenance.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a
+            href="#electronic"
+            class="service-card"
+            onclick="openService('electronic')"
+          >
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/Electronic\ Security.png&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Electronic Security</h3>
+              <p>
+                CCTV, metal detectors, access control, alarm systems and visitor
+                management.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a
+            href="#executive"
+            class="service-card"
+            onclick="openService('executive')"
+          >
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/Executive\ Protection\ 1.png&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Executive Protection</h3>
+              <p>
+                VIP & executive protection, secure travel, route planning and
+                event security.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a
+            href="#supply"
+            class="service-card"
+            onclick="openService('supply')"
+          >
+            <div
+              class="service-img"
+              style="
+                background-image: url(&quot;image/Corporate\ Supply.png&quot;);
+              "
+            ></div>
+            <div class="service-body">
+              <h3>Corporate Supply</h3>
+              <p>
+                Office stationery, IT equipment, printing, branding and
+                procurement services.
+              </p>
+              <span class="learn-more">Learn More →</span>
+            </div>
+          </a>
+          <a href="contact.html" class="service-card service-card-cta">
+            <div class="service-cta-inner">
+              <span class="service-cta-icon">→</span>
+              <h3>Need a Custom Solution?</h3>
+              <p>We tailor our services to fit your exact requirements.</p>
+              <span class="learn-more">Contact Us</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL ACCORDION DETAIL -->
+    <section class="services-full" id="servicesDetail">
+      <div class="container">
+        <p class="section-eyebrow center">Service Details</p>
+        <h2 class="section-title center" style="margin-bottom: 3rem">
+          Explore Each <span class="gold">Service</span>
+        </h2>
+
+        <div class="service-full-card" id="physical">
+          <div class="service-full-header">
+            <div class="service-full-icon">🛡️</div>
+            <h2>Physical Security Services</h2>
+            <span class="service-toggle">+</span>
+          </div>
+          <div class="service-full-body">
+            <p>
+              FSL provides comprehensive physical security solutions drawing on
+              decades of international experience from G4S Bangladesh. Our
+              uniformed security personnel are trained to the highest
+              professional standards and deployed across corporate, industrial,
+              and institutional environments.
+            </p>
+            <ul class="service-list">
+              <li>Static guarding & site protection</li>
+              <li>Access control & visitor management</li>
+              <li>Patrol & surveillance duties</li>
+              <li>Reception & front desk security</li>
+              <li>Emergency response support</li>
+              <li>Industrial & corporate security</li>
+              <li>Bank & ATM security services</li>
+              <li>24/7 on-site security coverage</li>
+            </ul>
+            <div style="margin-top: 1.5rem">
+              <a href="contact.html" class="btn-primary">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-full-card" id="facility">
+          <div class="service-full-header">
+            <div class="service-full-icon">🏢</div>
+            <h2>Facility Management Services</h2>
+            <span class="service-toggle">+</span>
+          </div>
+          <div class="service-full-body">
+            <p>
+              Our facility management services ensure your workplace remains
+              clean, functional, and professionally maintained. We provide
+              trained and vetted staff for all aspects of office and facility
+              support.
+            </p>
+            <ul class="service-list">
+              <li>Housekeeping & cleaning services</li>
+              <li>Janitorial & hygiene management</li>
+              <li>Office support staff</li>
+              <li>Pantry & utility support</li>
+              <li>Building maintenance coordination</li>
+              <li>Corporate facility support</li>
+              <li>Deep cleaning services</li>
+              <li>Pest control coordination</li>
+            </ul>
+            <div style="margin-top: 1.5rem">
+              <a href="contact.html" class="btn-primary">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-full-card" id="electronic">
+          <div class="service-full-header">
+            <div class="service-full-icon">📷</div>
+            <h2>Electronic Secure Solutions</h2>
+            <span class="service-toggle">+</span>
+          </div>
+          <div class="service-full-body">
+            <p>
+              We supply, install, and maintain a full range of electronic
+              security systems for businesses of all sizes. From CCTV
+              surveillance to advanced access control, our solutions integrate
+              seamlessly with your existing infrastructure.
+            </p>
+            <ul class="service-list">
+              <li>CCTV Surveillance Systems</li>
+              <li>Archway Metal Detectors</li>
+              <li>Hand Held Metal Detectors</li>
+              <li>Access Control Systems</li>
+              <li>Alarm & Monitoring Systems</li>
+              <li>Visitor Management Systems</li>
+              <li>Security Screening Equipment</li>
+              <li>Intercom & Communication Systems</li>
+            </ul>
+            <div style="margin-top: 1.5rem">
+              <a href="contact.html" class="btn-primary">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-full-card" id="executive">
+          <div class="service-full-header">
+            <div class="service-full-icon">👔</div>
+            <h2>Executive Protection & Escort Services</h2>
+            <span class="service-toggle">+</span>
+          </div>
+          <div class="service-full-body">
+            <p>
+              Our executive protection team provides discreet, professional
+              security for high-profile individuals, corporate leaders, and
+              visiting dignitaries. All personnel are trained in close
+              protection techniques and threat assessment protocols.
+            </p>
+            <ul class="service-list">
+              <li>VIP & executive protection</li>
+              <li>Secure travel & movement support</li>
+              <li>Route planning & threat assessment</li>
+              <li>Event & meeting security</li>
+              <li>Crowd & access control</li>
+              <li>Emergency response coordination</li>
+              <li>Confidential & professional escort</li>
+              <li>24/7 personal security detail</li>
+            </ul>
+            <div style="margin-top: 1.5rem">
+              <a href="contact.html" class="btn-primary">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-full-card" id="supply">
+          <div class="service-full-header">
+            <div class="service-full-icon">📦</div>
+            <h2>Corporate Supply & Business Solutions</h2>
+            <span class="service-toggle">+</span>
+          </div>
+          <div class="service-full-body">
+            <p>
+              Beyond security, FSL provides comprehensive corporate supply and
+              procurement services to support your entire business operation. We
+              offer competitive pricing, reliable delivery, and customized
+              solutions for corporate clients.
+            </p>
+            <ul class="service-list">
+              <li>Office Stationery Supply</li>
+              <li>IT Equipment & Computer Accessories</li>
+              <li>Printer, Toner & Cartridge Supply</li>
+              <li>Office Equipment & Electronics</li>
+              <li>Printing & Branding Materials</li>
+              <li>Corporate Procurement Services</li>
+              <li>General Order Supply Services</li>
+              <li>Cleaning & Hygiene Products</li>
+            </ul>
+            <div style="margin-top: 1.5rem">
+              <a href="contact.html" class="btn-primary">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Discuss Your Requirements</h2>
+          <p>
+            Our specialists are ready to design a solution for your business.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn-primary">Contact Us Today</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img
+                src="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+                alt="FSL"
+                class="footer-logo-img"
+              />
+              <div class="logo-text-block">
+                <span
+                  class="logo-name"
+                  style="color: #ffffff; font-size: 0.95rem"
+                  >First Solutions Limited</span
+                ><span class="logo-tagline" style="color: var(--silver)"
+                  >Excellence in Security Services</span
+                >
+              </div>
+            </div>
+            <p>
+              Providing integrated security and facility management solutions
+              across Bangladesh.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Our Services</a></li>
+              <li><a href="partners.html">Our Partners</a></li>
+              <li><a href="management.html">Management</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#physical">Physical Security</a></li>
+              <li><a href="#facility">Facility Management</a></li>
+              <li><a href="#electronic">Electronic Security</a></li>
+              <li><a href="#executive">Executive Protection</a></li>
+              <li><a href="#supply">Corporate Supply</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact-col">
+            <h4>Contact</h4>
+            <p>📞 +88 02 226617159</p>
+            <p>📞 +8801712849777</p>
+            <p>✉️ info@firstsolutions.com.bd</p>
+            <p>📍 House no-01, Road no-11, Block-J, Baridhara, Dhaka-1212</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 First Solutions Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+
+      <!-- THEME SWITCHER -->
+      <div class="theme-switcher-section">
+        <div class="theme-switcher-inner">
+          <span class="theme-switcher-label">🎨 Theme</span>
+          <div class="theme-btns">
+            <button class="theme-btn" data-theme-target="light">
+              <span class="swatch"></span> Light
+            </button>
+            <button class="theme-btn" data-theme-target="dark">
+              <span class="swatch"></span> Dark
+            </button>
+            <button class="theme-btn" data-theme-target="navy">
+              <span class="swatch"></span> Navy
+            </button>
+            <button class="theme-btn" data-theme-target="red">
+              <span class="swatch"></span> Red
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+      function openService(id) {
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+            const body = el.querySelector(".service-full-body");
+            const toggle = el.querySelector(".service-toggle");
+            if (body && !body.classList.contains("open")) {
+              body.classList.add("open");
+              if (toggle) toggle.textContent = "−";
+            }
+          }
+        }, 100);
+      }
+      // Auto-open from hash
+      window.addEventListener("load", () => {
+        const hash = location.hash.replace("#", "");
+        if (hash) openService(hash);
+      });
+    </script>
+  </body>
+</html>

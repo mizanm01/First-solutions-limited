@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery – First Solutions Limited</title>
+    <link
+      rel="icon"
+      type="image/jpeg"
+      href="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/jpeg"
+      href="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+    />
+    <meta name="theme-color" content="#1B2A6B" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@600;700&family=Inter:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* top offset for topbar + navbar */
+      body {
+        padding-top: 0 !important;
+      }
+      #topInfoBar + .navbar,
+      #topInfoBar ~ nav.navbar {
+        position: sticky;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PAGE LOADER -->
+    <div id="fsl-loader">
+      <div class="loader-logo">FSL</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <div class="loader-text">First Solutions Limited</div>
+    </div>
+
+    <!-- TOP INFO BAR -->
+    <div id="topInfoBar">
+      <div class="topbar-inner">
+        <div class="topbar-left">
+          <a href="#" class="topbar-item">
+            <span class="ticon">&#x1F4AC;</span>
+            <span class="live-dot"></span>24/7 Live Support
+          </a>
+          <div class="topbar-divider"></div>
+          <a href="tel:+8801712849777" class="topbar-item">
+            <span class="ticon">&#x1F4DE;</span>
+            +880 1712849777
+          </a>
+          <div class="topbar-divider"></div>
+          <a href="mailto:info@firstsolutions.com.bd" class="topbar-item">
+            <span class="ticon">&#x1F4AC;</span>
+            Live Chat
+          </a>
+        </div>
+        <div class="topbar-right">
+          <span
+            style="
+              font-size: 0.7rem;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              opacity: 0.7;
+            "
+            >Follow Us</span
+          >
+          <div class="topbar-social">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Twitter">X</a>
+            <a href="#" title="LinkedIn">in</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar scrolled" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img
+            src="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+            alt="FSL"
+            class="logo-img"
+          />
+          <div class="logo-text-block">
+            <span class="logo-name">First Solutions Limited</span>
+            <span class="logo-tagline">Excellence in Security Services</span>
+          </div>
+        </a>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="partners.html">Our Partners</a></li>
+          <li><a href="management.html">Management</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-eyebrow center">Visual Stories</p>
+        <h1>Photo <span class="gold">Gallery</span></h1>
+        <p>
+          A glimpse into our operations, team, and the standards we uphold every
+          day.
+        </p>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Gallery</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="container">
+        <!-- Filter Tabs -->
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+          "
+          id="galleryFilters"
+        >
+          <button class="gallery-filter active" data-cat="all">All</button>
+          <button class="gallery-filter" data-cat="security">
+            Security Operations
+          </button>
+          <button class="gallery-filter" data-cat="facility">
+            Facility Management
+          </button>
+          <button class="gallery-filter" data-cat="team">Our Team</button>
+          <button class="gallery-filter" data-cat="events">Events</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <!--Security guard gallery photo  1-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 1.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  1-->
+
+          <!--Security guard gallery photo  2-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 4.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  2-->
+
+          <!--Security guard gallery photo  3-->
+
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 5.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  3-->
+
+          <!--Security guard gallery photo  4-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 6.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+
+          <!-- End Security guard gallery photo  4-->
+
+          <!--Security guard gallery photo  5-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 7.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  5-->
+
+          <!--Security guard gallery photo  5-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 8.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  5-->
+          <!--Security guard gallery photo  6-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 9.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  6-->
+          <!--Security guard gallery photo  7-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 10.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  6-->
+          <!--Security guard gallery photo  7-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 11.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  7-->
+          <!--Security guard gallery photo  8-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 12.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  8-->
+          <!--Security guard gallery photo  9-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 13.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  9-->
+          <!--Security guard gallery photo  10-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 14.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  10-->
+          <!--Security guard gallery photo  11-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 15.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  11-->
+          <!--Security guard gallery photo  12-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 16.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  12-->
+          <!--Security guard gallery photo  13-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 17.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  13-->
+          <!--Security guard gallery photo  14-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 18.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  14-->
+          <!--Security guard gallery photo  15-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 19.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  15-->
+          <!--Security guard gallery photo  16-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 20.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  16-->
+          <!--Security guard gallery photo  17-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 21.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  17-->
+          <!--Security guard gallery photo  18-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 22.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  18-->
+          <!--Security guard gallery photo  19-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 23.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  19-->
+          <!--Security guard gallery photo  20-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 2.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  20-->
+          <!--Security guard gallery photo  21-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 3.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  21-->
+          <!--Security guard gallery photo  22-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 4.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  22-->
+          <!--Security guard gallery photo  23-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 4.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  23-->
+          <!--Security guard gallery photo  24-->
+          <div class="gallery-item" data-cat="security">
+            <img
+              src="image/Security Operations/Security Operations 24.jpeg"
+              alt="Security Operations"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!-- End Security guard gallery photo  24-->
+          <!--End Security guard gallery-->
+
+          <!--Facility gallery photo 1-->
+          <div class="gallery-item" data-cat="facility">
+            <img
+              src="image/logo/First limited.jpg"
+              alt="Facility services"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End Facility gallery photo 1-->
+
+          <!--Facility gallery photo 2-->
+          <div class="gallery-item" data-cat="facility">
+            <img
+              src="image/logo/First limited.jpg"
+              alt="Facility services"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End Facility gallery photo 2-->
+          <!--Team gallery photo 1-->
+          <div class="gallery-item" data-cat="team">
+            <img
+              src="image/Our Team/Team 1.jpeg"
+              alt="FSL team"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End Team gallery photo 1-->
+          <!--End Team gallery-->
+
+          <!--Event gallery photo 1-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 1.jpg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 1-->
+
+          <!--Event gallery photo 2-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 2.jpg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 2-->
+
+          <!--Event gallery photo 3-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 3.jpg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 3-->
+
+          <!--Event gallery photo 4-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 4.jpg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 4-->
+
+          <!--Event gallery photo 5-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 5.jpeg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 5-->
+
+          <!--Event gallery photo 6-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 6.jpeg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 6-->
+
+          <!--Event gallery photo 7-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 7.jpeg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 7-->
+
+          <!--Event gallery photo 8-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 8.jpeg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 8-->
+
+          <!--Event gallery photo 9-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 9.jpeg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 9-->
+
+          <!--Event gallery photo 10-->
+          <div class="gallery-item" data-cat="events">
+            <img
+              src="image/Events/FSL Event Photo 10.jpeg"
+              alt="Events Photo"
+              loading="lazy"
+            />
+            <div class="gallery-item-overlay">🔍</div>
+          </div>
+          <!--End event gallery photo 10-->
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div
+      id="lightbox"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <button
+        id="lbClose"
+        style="
+          position: absolute;
+          top: 20px;
+          right: 24px;
+          background: none;
+          border: none;
+          color: var(--gold);
+          font-size: 2rem;
+          cursor: pointer;
+        "
+      >
+        ✕
+      </button>
+      <button
+        id="lbPrev"
+        style="
+          position: absolute;
+          left: 20px;
+          background: none;
+          border: none;
+          color: var(--gold);
+          font-size: 2.5rem;
+          cursor: pointer;
+        "
+      >
+        ‹
+      </button>
+      <img
+        id="lbImg"
+        src=""
+        alt=""
+        style="
+          max-width: 90vw;
+          max-height: 85vh;
+          object-fit: contain;
+          border-radius: 8px;
+        "
+      />
+      <button
+        id="lbNext"
+        style="
+          position: absolute;
+          right: 20px;
+          background: none;
+          border: none;
+          color: var(--gold);
+          font-size: 2.5rem;
+          cursor: pointer;
+        "
+      >
+        ›
+      </button>
+    </div>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <h2>See FSL in Action</h2>
+          <p>
+            Contact us to arrange a site visit or discuss your security needs.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn-primary">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img
+                src="https://firstsolutions.com.bd/image/logo/First%20solutions%20limited.jpg"
+                alt="FSL"
+                class="footer-logo-img"
+              />
+              <div class="logo-text-block">
+                <span
+                  class="logo-name"
+                  style="color: #ffffff; font-size: 0.95rem"
+                  >First Solutions Limited</span
+                ><span class="logo-tagline" style="color: var(--silver)"
+                  >Excellence in Security Services</span
+                >
+              </div>
+            </div>
+            <p>
+              Providing integrated security and facility management solutions
+              across Bangladesh.
+            </p>
+          </div>
+          <div class="footer-links-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Our Services</a></li>
+              <li><a href="partners.html">Our Partners</a></li>
+              <li><a href="management.html">Management</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#physical">Physical Security</a></li>
+              <li><a href="services.html#facility">Facility Management</a></li>
+              <li>
+                <a href="services.html#electronic">Electronic Security</a>
+              </li>
+              <li>
+                <a href="services.html#executive">Executive Protection</a>
+              </li>
+              <li><a href="services.html#supply">Corporate Supply</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact-col">
+            <h4>Contact</h4>
+            <p>📞 +88 02 226617159</p>
+            <p>📞 +8801712849777</p>
+            <p>✉️ info@firstsolutions.com.bd</p>
+            <p>📍 House no-01, Road no-11, Block-J, Baridhara, Dhaka-1212</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 First Solutions Limited. All Rights Reserved.</p>
+        </div>
+      </div>
+
+      <!-- THEME SWITCHER -->
+      <div class="theme-switcher-section">
+        <div class="theme-switcher-inner">
+          <span class="theme-switcher-label">🎨 Theme</span>
+          <div class="theme-btns">
+            <button class="theme-btn" data-theme-target="light">
+              <span class="swatch"></span> Light
+            </button>
+            <button class="theme-btn" data-theme-target="dark">
+              <span class="swatch"></span> Dark
+            </button>
+            <button class="theme-btn" data-theme-target="navy">
+              <span class="swatch"></span> Navy
+            </button>
+            <button class="theme-btn" data-theme-target="red">
+              <span class="swatch"></span> Red
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .gallery-filter {
+        background: var(--dark2);
+        border: 1px solid var(--border);
+        color: var(--grey-lt);
+        padding: 0.55rem 1.25rem;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .gallery-filter.active,
+      .gallery-filter:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--black);
+      }
+      .gallery-item {
+        transition:
+          opacity 0.4s,
+          transform 0.4s;
+      }
+      .gallery-item.hidden {
+        display: none;
+      }
+    </style>
+
+    <script src="main.js"></script>
+    <script>
+      // Gallery filter
+      const filters = document.querySelectorAll(".gallery-filter");
+      const items = document.querySelectorAll(".gallery-item");
+      filters.forEach((f) => {
+        f.addEventListener("click", () => {
+          filters.forEach((b) => b.classList.remove("active"));
+          f.classList.add("active");
+          const cat = f.dataset.cat;
+          items.forEach((item) => {
+            if (cat === "all" || item.dataset.cat === cat)
+              item.classList.remove("hidden");
+            else item.classList.add("hidden");
+          });
+        });
+      });
+
+      // Lightbox
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lbImg");
+      let currentIndex = 0;
+      const allImgs = [...document.querySelectorAll(".gallery-item img")];
+
+      document.querySelectorAll(".gallery-item").forEach((item, i) => {
+        item.addEventListener("click", () => {
+          currentIndex = i;
+          lbImg.src = allImgs[i].src;
+          lb.style.display = "flex";
+        });
+      });
+      document
+        .getElementById("lbClose")
+        .addEventListener("click", () => (lb.style.display = "none"));
+      document.getElementById("lbPrev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + allImgs.length) % allImgs.length;
+        lbImg.src = allImgs[currentIndex].src;
+      });
+      document.getElementById("lbNext").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % allImgs.length;
+        lbImg.src = allImgs[currentIndex].src;
+      });
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) lb.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
