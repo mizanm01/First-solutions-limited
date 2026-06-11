@@ -6,7 +6,7 @@
 window.addEventListener("load", () => {
   const loader = document.getElementById("fsl-loader");
   if (loader) {
-    setTimeout(() => loader.classList.add("loaded"), 200);
+    setTimeout(() => loader.classList.add("loaded"), 100);
   }
 });
 
