@@ -466,7 +466,49 @@
         </div>
       </div>
     </footer>
+    <!-- EmailJS CDN -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
 
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("VL-X7JRqe6E3fVRW2"); // ✅ আপনার Public Key
+      })();
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const btn = document.querySelector(".form-submit");
+          const originalText = btn.textContent;
+          btn.textContent = "Sending...";
+          btn.disabled = true;
+
+          emailjs
+            .sendForm(
+              "service_zqzhe9d", // ✅ Service ID
+              "template_waj7a6o", // ✅ Main Template ID
+              this,
+            )
+            .then(
+              function () {
+                alert("✅ Your message has been sent successfully!");
+                document.getElementById("contactForm").reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+              },
+              function (error) {
+                alert("❌ Failed to send. Please try again.");
+                console.log("Error:", error);
+                btn.textContent = originalText;
+                btn.disabled = false;
+              },
+            );
+        });
+    </script>
     <script src="main.js"></script>
   </body>
 </html>
