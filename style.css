@@ -314,6 +314,14 @@ body {
   color: rgba(255, 255, 255, 0.7);
   animation: loaderFade 1.6s ease-out forwards;
 }
+.loader-logo img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
 @keyframes loaderPulse {
   0%,
   100% {
