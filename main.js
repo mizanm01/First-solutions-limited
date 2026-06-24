@@ -63,17 +63,6 @@ if (!navOverlay) {
   document.body.appendChild(navOverlay);
 }
 
-// Create close button inside nav if not present
-let navCloseBtn = document.getElementById("navCloseBtn");
-if (navLinks && !navCloseBtn) {
-  navCloseBtn = document.createElement("button");
-  navCloseBtn.id = "navCloseBtn";
-  navCloseBtn.className = "nav-close-btn";
-  navCloseBtn.innerHTML = "&#x2715;";
-  navCloseBtn.setAttribute("aria-label", "Close menu");
-  navLinks.insertBefore(navCloseBtn, navLinks.firstChild);
-}
-
 function openNav() {
   if (!navLinks || !hamburger) return;
   navLinks.classList.add("open");
@@ -104,11 +93,6 @@ if (hamburger && navLinks) {
   navLinks.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", () => closeNav());
   });
-
-  // Close button
-  if (navCloseBtn) {
-    navCloseBtn.addEventListener("click", () => closeNav());
-  }
 
   // Close on overlay click
   navOverlay.addEventListener("click", () => closeNav());
