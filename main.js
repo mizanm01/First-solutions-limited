@@ -11,31 +11,31 @@ window.addEventListener("load", () => {
 });
 
 // ── TOP INFO BAR HIDE ON SCROLL ──
-const topInfoBar = document.getElementById("topInfoBar");
-let lastScroll = 0;
-let ticking = false;
+// const topInfoBar = document.getElementById("topInfoBar");
+// let lastScroll = 0;
+// let ticking = false;
 
-window.addEventListener(
-  "scroll",
-  () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const current = window.scrollY;
-        if (topInfoBar) {
-          if (current > 80) {
-            topInfoBar.classList.add("hidden");
-          } else {
-            topInfoBar.classList.remove("hidden");
-          }
-        }
-        lastScroll = current;
-        ticking = false;
-      });
-      ticking = true;
-    }
-  },
-  { passive: true },
-);
+// window.addEventListener(
+//   "scroll",
+//   () => {
+//     if (!ticking) {
+//       window.requestAnimationFrame(() => {
+//         const current = window.scrollY;
+//         if (topInfoBar) {
+//           if (current > 80) {
+//             topInfoBar.classList.add("hidden");
+//           } else {
+//             topInfoBar.classList.remove("hidden");
+//           }
+//         }
+//         lastScroll = current;
+//         ticking = false;
+//       });
+//       ticking = true;
+//     }
+//   },
+//   { passive: true },
+// );
 
 // ── NAVBAR SCROLL EFFECT ──
 const navbar = document.getElementById("navbar");
@@ -61,6 +61,17 @@ if (!navOverlay) {
   navOverlay.id = "navOverlay";
   navOverlay.className = "nav-overlay";
   document.body.appendChild(navOverlay);
+}
+
+// Create close button inside nav if not present
+let navCloseBtn = document.getElementById("navCloseBtn");
+if (navLinks && !navCloseBtn) {
+  navCloseBtn = document.createElement("button");
+  navCloseBtn.id = "navCloseBtn";
+  navCloseBtn.className = "nav-close-btn";
+  navCloseBtn.innerHTML = "&#x2715;";
+  navCloseBtn.setAttribute("aria-label", "Close menu");
+  navLinks.insertBefore(navCloseBtn, navLinks.firstChild);
 }
 
 function openNav() {
@@ -93,6 +104,11 @@ if (hamburger && navLinks) {
   navLinks.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", () => closeNav());
   });
+
+  // Close button
+  if (navCloseBtn) {
+    navCloseBtn.addEventListener("click", () => closeNav());
+  }
 
   // Close on overlay click
   navOverlay.addEventListener("click", () => closeNav());
