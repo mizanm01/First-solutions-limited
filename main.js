@@ -50,25 +50,72 @@ window.addEventListener(
   { passive: true },
 );
 
-// ── MOBILE HAMBURGER ──
+// ── MOBILE HAMBURGER + OVERLAY ──
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
+
+// Create overlay dynamically
+let navOverlay = document.getElementById("navOverlay");
+if (!navOverlay) {
+  navOverlay = document.createElement("div");
+  navOverlay.id = "navOverlay";
+  navOverlay.className = "nav-overlay";
+  document.body.appendChild(navOverlay);
+}
+
+// Create close button inside nav if not present
+let navCloseBtn = document.getElementById("navCloseBtn");
+if (navLinks && !navCloseBtn) {
+  navCloseBtn = document.createElement("button");
+  navCloseBtn.id = "navCloseBtn";
+  navCloseBtn.className = "nav-close-btn";
+  navCloseBtn.innerHTML = "&#x2715;";
+  navCloseBtn.setAttribute("aria-label", "Close menu");
+  navLinks.insertBefore(navCloseBtn, navLinks.firstChild);
+}
+
+function openNav() {
+  if (!navLinks || !hamburger) return;
+  navLinks.classList.add("open");
+  hamburger.classList.add("active");
+  navOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeNav() {
+  if (!navLinks || !hamburger) return;
+  navLinks.classList.remove("open");
+  hamburger.classList.remove("active");
+  navOverlay.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
 if (hamburger && navLinks) {
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-    hamburger.classList.toggle("active");
-  });
-  navLinks.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-      hamburger.classList.remove("active");
-    });
-  });
-  document.addEventListener("click", (e) => {
-    if (navbar && !navbar.contains(e.target)) {
-      navLinks.classList.remove("open");
-      hamburger.classList.remove("active");
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (navLinks.classList.contains("open")) {
+      closeNav();
+    } else {
+      openNav();
     }
+  });
+
+  // Close on nav link click
+  navLinks.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => closeNav());
+  });
+
+  // Close button
+  if (navCloseBtn) {
+    navCloseBtn.addEventListener("click", () => closeNav());
+  }
+
+  // Close on overlay click
+  navOverlay.addEventListener("click", () => closeNav());
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeNav();
   });
 }
 
