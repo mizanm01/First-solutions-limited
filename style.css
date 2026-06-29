@@ -2618,4 +2618,37 @@ h4 {
   }
 }
 
-/**New Add for nav**/
+/**New Add for nav 
+Management **/
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .container > div:last-child {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    max-width: 100% !important;
+    padding: 0 1rem;
+  }
+
+  .container > div:last-child > div {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container > div:last-child {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 100% !important;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container > div:last-child {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+  }
+}
