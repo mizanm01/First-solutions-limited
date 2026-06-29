@@ -2,7 +2,7 @@
    FSL main.js — Enhanced
    ══════════════════════════════════════ */
 
-// ── PAGE LOADER ──
+// --- PAGE LOADER ---
 window.addEventListener("load", () => {
   const loader = document.getElementById("fsl-loader");
   if (loader) {
@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
   }
 });
 
-// ── TOP INFO BAR HIDE ON SCROLL ──
+// --- TOP INFO BAR HIDE ON SCROLL ---
 // const topInfoBar = document.getElementById("topInfoBar");
 // let lastScroll = 0;
 // let ticking = false;
@@ -37,7 +37,7 @@ window.addEventListener("load", () => {
 //   { passive: true },
 // );
 
-// ── NAVBAR SCROLL EFFECT ──
+// --- NAVBAR SCROLL EFFECT ---
 const navbar = document.getElementById("navbar");
 window.addEventListener(
   "scroll",
@@ -50,7 +50,7 @@ window.addEventListener(
   { passive: true },
 );
 
-// ── MOBILE HAMBURGER + OVERLAY ──
+// --- MOBILE HAMBURGER + OVERLAY ---
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
@@ -119,7 +119,7 @@ if (hamburger && navLinks) {
   });
 }
 
-// ── SERVICE ACCORDION ──
+// --- SERVICE ACCORDION ---
 document.querySelectorAll(".service-full-header").forEach((header) => {
   header.addEventListener("click", () => {
     const body = header.nextElementSibling;
@@ -138,7 +138,7 @@ document.querySelectorAll(".service-full-header").forEach((header) => {
   });
 });
 
-// ── MANAGEMENT CARD EXPAND ──
+// --- MANAGEMENT CARD EXPAND ---
 document.querySelectorAll(".btn-details").forEach((btn) => {
   btn.addEventListener("click", () => {
     const card = btn.closest(".mgmt-card");
@@ -155,7 +155,7 @@ document.querySelectorAll(".btn-details").forEach((btn) => {
   });
 });
 
-// ── SCROLL REVEAL ──
+// --- SCROLL REVEAL ---
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
     (entries) => {
@@ -180,7 +180,7 @@ if ("IntersectionObserver" in window) {
     });
 }
 
-// ── CONTACT FORM SUBMIT ──
+// --- CONTACT FORM SUBMIT ---
 const form = document.getElementById("contactForm");
 if (form) {
   form.addEventListener("submit", (e) => {
@@ -198,7 +198,7 @@ if (form) {
   });
 }
 
-// ── THEME SWITCHER ──
+// --- THEME SWITCHER ---
 (function () {
   const STORAGE_KEY = "fsl-theme";
   const DEFAULT_THEME = "light";

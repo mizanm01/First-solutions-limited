@@ -1,31 +1,33 @@
 /* ============================================
    FSL – First Solutions Limited
-   Multi-Theme System: White/Light + Red + Navy
+   Md. Mijanur Rahman
+   Payroll Officer
+   First Solutions Limited
    ============================================ */
 
-/* ── DEFAULT THEME: Light (White BG + Red + Navy) ── */
+/* --- DEFAULT THEME: Light (White BG + Red + Navy) --- */
 :root,
 [data-theme="light"] {
-  /* ── Core Backgrounds ── */
+  /* --- Core Backgrounds --- */
   --black: #ffffff;
   --dark: #f4f6fa;
   --dark2: #eef1f8;
   --dark3: #e4e9f2;
   --charcoal: #f0f3fa;
 
-  /* ── Brand Red ── */
+  /* --- Brand Red --- */
   --gold: #c0392b;
   --gold-lt: #e05444;
   --gold-dk: #96211b;
   --gold-glow: rgba(192, 57, 43, 0.15);
 
-  /* ── Navy ── */
+  /* --- Navy --- */
   --navy: #1b3a6b;
   --navy-lt: #2a559e;
   --navy-dk: #0f2245;
   --navy-mid: #1e3d72;
 
-  /* ── Neutrals ── */
+  /* --- Neutrals --- */
   --silver: #8898aa;
   --white: #111827;
   --off-white: #f4f6fa;
@@ -34,11 +36,11 @@
   --border: rgba(192, 57, 43, 0.18);
   --border-dim: rgba(27, 58, 107, 0.18);
 
-  /* ── Info Bar ── */
+  /* --- Info Bar --- */
   --topbar-bg: #0f2245;
   --topbar-text: #c8d8e8;
 
-  /* ── Card & Surface ── */
+  /* --- Card & Surface --- */
   --card-bg: #ffffff;
   --card-border: rgba(27, 58, 107, 0.15);
   --input-bg: #f4f6fa;
@@ -46,7 +48,7 @@
   --text-secondary: #374151;
   --text-muted: #6b7280;
 
-  /* ── Misc ── */
+  /* --- Misc --- */
   --radius: 4px;
   --radius-lg: 12px;
   --radius-xl: 20px;
@@ -56,7 +58,7 @@
   --font-body: "Inter", "Open Sans", system-ui, sans-serif;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* ── Navbar ── */
+  /* --- Navbar --- */
   --navbar-bg: rgba(255, 255, 255, 0.97);
   --navbar-scrolled: rgba(255, 255, 255, 0.99);
   --nav-link-color: #374151;
@@ -68,14 +70,14 @@
   );
   --page-after-bg: var(--dark);
 
-  /* ── Footer ── */
+  /* --- Footer --- */
   --footer-bg: #0a1628;
   --footer-text: #a0aec0;
   --footer-heading: #c0392b;
   --footer-link: #94a3b8;
 }
 
-/* ── DARK CLASSIC THEME ── */
+/* --- DARK CLASSIC THEME --- */
 [data-theme="dark"] {
   --black: #0a0c10;
   --dark: #0d1117;
@@ -131,7 +133,7 @@
   --shadow-gold: 0 4px 24px rgba(201, 168, 76, 0.25);
 }
 
-/* ── NAVY PROFESSIONAL THEME ── */
+/* --- NAVY PROFESSIONAL THEME --- */
 [data-theme="navy"] {
   --black: #0a1628;
   --dark: #0d1f3c;
@@ -187,7 +189,7 @@
   --shadow-gold: 0 4px 24px rgba(232, 184, 75, 0.25);
 }
 
-/* ── RED POWER THEME ── */
+/* --- RED POWER THEME --- */
 [data-theme="red"] {
   --black: #0f0505;
   --dark: #150a0a;
@@ -1339,7 +1341,7 @@ h4 {
 /* ══════════════════════════════════════
    THEME SWITCHER IN FOOTER
    ══════════════════════════════════════ */
-.theme-switcher-section {
+/* .theme-switcher-section {
   background: var(--footer-bg);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 1.5rem 0;
@@ -1422,7 +1424,7 @@ h4 {
 }
 .theme-btn[data-theme-target="red"].active {
   border-color: #e85555;
-}
+} */
 
 /* ══════════════════════════════════════
    PAGE HERO (Sub-pages)
@@ -2126,7 +2128,7 @@ h4 {
    RESPONSIVE
    ══════════════════════════════════════ */
 
-/* ── Tablet: 769px – 1024px ── */
+/* --- Tablet: 769px – 1024px --- */
 @media (max-width: 1024px) {
   .intro-grid,
   .about-grid {
@@ -2175,9 +2177,9 @@ h4 {
   }
 }
 
-/* ── Mobile Landscape + Small Tablet: ≤768px ── */
+/* --- Mobile Landscape + Small Tablet: ≤768px --- */
 @media (max-width: 768px) {
-  /* ── NAVBAR & HAMBURGER ── */
+  /* --- NAVBAR & HAMBURGER --- */
   .hamburger {
     display: flex;
     z-index: 1002;
@@ -2227,7 +2229,7 @@ h4 {
     border-bottom: none;
   }
 
-  /* ── TOPBAR ── */
+  /* --- TOPBAR --- */
   .topbar-inner {
     padding: 0 16px;
   }
@@ -2241,7 +2243,7 @@ h4 {
     display: none;
   }
 
-  /* ── HERO ── */
+  /* --- HERO --- */
   .hero-info-strip {
     padding: 36px 0 32px;
   }
@@ -2272,7 +2274,7 @@ h4 {
     flex-wrap: wrap;
   }
 
-  /* ── SECTIONS ── */
+  /* --- SECTIONS --- */
   .intro-section,
   .about-content,
   .services-full,
@@ -2297,7 +2299,7 @@ h4 {
     font-size: 2rem;
   }
 
-  /* ── GRIDS ── */
+  /* --- GRIDS --- */
   .services-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -2324,7 +2326,7 @@ h4 {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* ── CTA ── */
+  /* --- CTA --- */
   .cta-band .container {
     flex-direction: column;
     text-align: center;
@@ -2338,7 +2340,7 @@ h4 {
     font-size: 1.6rem;
   }
 
-  /* ── CONTACT ── */
+  /* --- CONTACT --- */
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -2350,15 +2352,15 @@ h4 {
     padding: 1.75rem;
   }
 
-  /* ── FOOTER ── */
+  /* --- FOOTER --- */
   .footer {
     padding: 60px 0 0;
   }
 }
 
-/* ── Mobile Portrait: ≤480px ── */
+/* --- Mobile Portrait: ≤480px --- */
 @media (max-width: 480px) {
-  /* ── TOPBAR ── */
+  /* --- TOPBAR --- */
   .topbar-inner {
     padding: 0 12px;
   }
@@ -2379,7 +2381,7 @@ h4 {
     display: none;
   }
 
-  /* ── NAVBAR ── */
+  /* --- NAVBAR --- */
   .nav-container {
     padding: 0 14px;
   }
@@ -2394,7 +2396,7 @@ h4 {
     width: 40px;
   }
 
-  /* ── HERO ── */
+  /* --- HERO --- */
   .hero-stats-circles {
     gap: 10px;
   }
@@ -2416,7 +2418,7 @@ h4 {
     font-size: 0.85rem;
   }
 
-  /* ── SECTIONS ── */
+  /* --- SECTIONS --- */
   .intro-section,
   .about-content,
   .services-full,
@@ -2447,7 +2449,7 @@ h4 {
     font-size: 1.9rem !important;
   }
 
-  /* ── GRIDS ── */
+  /* --- GRIDS --- */
   .services-grid {
     grid-template-columns: 1fr !important;
   }
@@ -2478,7 +2480,7 @@ h4 {
     gap: 2rem;
   }
 
-  /* ── SERVICES ACCORDION ── */
+  /* --- SERVICES ACCORDION --- */
   .service-full-header {
     padding: 1.1rem 1.25rem;
     gap: 0.85rem;
@@ -2496,12 +2498,12 @@ h4 {
     padding: 0 1.25rem;
   }
 
-  /* ── ABOUT VISUAL STATS ── */
+  /* --- ABOUT VISUAL STATS --- */
   .about-visual {
     padding: 2rem 1.5rem;
   }
 
-  /* ── CONTACT FORM ── */
+  /* --- CONTACT FORM --- */
   .contact-form {
     padding: 1.25rem;
   }
@@ -2509,7 +2511,7 @@ h4 {
     gap: 30px;
   }
 
-  /* ── MANAGEMENT CARD ── */
+  /* --- MANAGEMENT CARD --- */
   .mgmt-card {
     padding: 1.5rem;
   }
@@ -2519,7 +2521,7 @@ h4 {
     font-size: 1.6rem;
   }
 
-  /* ── BUTTONS ── */
+  /* --- BUTTONS --- */
   .btn-primary,
   .btn-outline,
   .btn-outline-light {
@@ -2527,14 +2529,14 @@ h4 {
     padding: 0.7rem 1.4rem;
   }
 
-  /* ── PARTNERS CAROUSEL ── */
+  /* --- PARTNERS CAROUSEL --- */
   .partner-logo-slide {
     font-size: 0.77rem;
     padding: 0.65rem 1rem;
     min-width: 120px;
   }
 
-  /* ── THEME SWITCHER ── */
+  /* --- THEME SWITCHER --- */
   .theme-switcher-inner {
     gap: 0.75rem;
     flex-direction: column;
@@ -2548,7 +2550,7 @@ h4 {
     padding: 0.4rem 0.75rem;
   }
 
-  /* ── CTA ── */
+  /* --- CTA --- */
   .cta-content h2 {
     font-size: 1.35rem;
   }
@@ -2562,20 +2564,20 @@ h4 {
     max-width: 260px;
   }
 
-  /* ── GALLERY ── */
+  /* --- GALLERY --- */
   .gallery-filter {
     font-size: 0.72rem;
     padding: 0.45rem 0.9rem;
   }
 
-  /* ── MISC ── */
+  /* --- MISC --- */
   div[style*="grid-template-columns:repeat(3,1fr)"] {
     display: flex !important;
     flex-direction: column !important;
   }
 }
 
-/* ── Extra Small: ≤360px ── */
+/* --- Extra Small: ≤360px --- */
 @media (max-width: 360px) {
   .stat-circle {
     width: 76px;
